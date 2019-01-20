@@ -1,6 +1,10 @@
+// tslint:disable-next-line:import-name
 import React from 'react';
+// tslint:disable-next-line:import-name
 import ReactDOM from 'react-dom';
+
 import './index.css';
+
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 

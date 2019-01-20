@@ -7,6 +7,21 @@
     "jsRules": {
     },
     "rules": {
+        "trailing-comma": [
+            true,
+            {
+                "multiline": {
+                    "arrays": "always",
+                    "objects": "always",
+                    "functions": "never",
+                    "imports": "always",
+                    "exports": "always",
+                    "typeLiterals": "always"
+                },
+                "singleline": "never",
+                "esSpecCompliant": true
+            }
+        ]
     },
     "rulesDirectory": [
     ]
