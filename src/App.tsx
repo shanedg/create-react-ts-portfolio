@@ -22,37 +22,63 @@ class App extends Component {
 /**
  * Define properties of CustomForm state.
  */
-interface ICustomFormState {
+interface ICustomInputState {
   formValue: string;
 }
 
-class CustomForm extends Component<{}, ICustomFormState> {
+class CustomForm extends Component<{}, ICustomInputState> {
   constructor(props: any) {
     super(props);
+
     this.state = {
       formValue: '',
     };
 
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   public render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          test:
-          <input
-            type="text"
-            value={this.state.formValue}
-            onChange={this.handleChange}
-          />
-        </label>
+        <CustomInput></CustomInput>
         <input
           type="submit"
           value="Submit"
         />
       </form>
+    );
+  }
+
+  /**
+   * Handle form submission.
+   * @param {any} event Form submit event.
+   */
+  private handleSubmit(event: any) {
+    event.preventDefault();
+  }
+}
+
+class CustomInput extends Component<{}, ICustomInputState> {
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      formValue: '',
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  public render() {
+    return (
+      <label>
+        test:
+        <input
+          type="text"
+          value={this.state.formValue}
+          onChange={this.handleChange}
+        />
+      </label>
     );
   }
 
@@ -64,14 +90,6 @@ class CustomForm extends Component<{}, ICustomFormState> {
     this.setState({
       formValue: event.target.value,
     });
-  }
-
-  /**
-   * Handle form submission.
-   * @param {any} event Form submit event.
-   */
-  private handleSubmit(event: any) {
-    event.preventDefault();
   }
 }
 
