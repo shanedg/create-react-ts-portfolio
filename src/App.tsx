@@ -11,85 +11,125 @@ import './App.scss';
  */
 class App extends Component {
   public render() {
+    /**
+     * Simple resumé details.
+     */
+    const work = [
+      {
+        askMeAbout: ['angular', 'reactive forms', 'material ui'],
+        dates: {
+          end: 'present',
+          start: new Date('2018-11-05'),
+        },
+        employerName: 'zipari',
+        roleTitle: 'front end developer',
+      },
+      {
+        askMeAbout: [
+          'node, craftcms, wordpress',
+          'react and vue js',
+          'experimentation & personalization',
+          'content migration, re-platforming, site launches',
+        ],
+        dates: {
+          end: new Date('2018-10-26'),
+          start: new Date('2017-07-10'),
+        },
+        employerName: 'braze (formerly appboy)',
+        roleTitle: 'web engineer',
+      },
+      {
+        askMeAbout: [
+          'conversion optimization, a/b testing',
+          'integrating tech in the enterprise',
+          'responsive vs adaptive front end development',
+        ],
+        dates: {
+          end: new Date('2017-07-06'),
+          start: new Date('2014-06-16'),
+        },
+        employerName: "dick's sporting goods",
+        roleTitle: 'front end web developer',
+      },
+    ];
+
     return (
       <div className="App">
-        <CustomForm></CustomForm>
+        <div className="App__inner">
+          <header className="header">
+            <h1 className="h1">shane garrity</h1>
+          </header>
+
+          <nav className="nav">
+            <ul>
+              {/* <li><NavLink>home</NavLink></li> */}
+            </ul>
+          </nav>
+
+          <section className="about">
+            <h2>about</h2>
+            <p>
+              shane is an experienced developer with a background in front end and
+              generalist work. he lives and works in nyc.
+            </p>
+          </section>
+
+          <section className="contact">
+            <h2>talk to me</h2>
+            <p>
+              check out my{' '}
+              <a
+                href="https://github.com/shanedg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                github
+              </a>{' '}
+              or connect with me on{' '}
+              <a
+                href="https://www.linkedin.com/in/shane-garrity-ba915544"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                linkedin
+              </a>{' '}
+              or shoot me an <a href="mailto:shanedgarrity+ws@gmail.com">email</a>
+            </p>
+          </section>
+
+          <article className="article work">
+            <h2 className="h2">work</h2>
+            {work.map((job, index) => {
+              return (
+                <section key={index} className="employer">
+                  <div className="employer__heading">
+                    <h3 className="h3 employer__heading-name">{job.employerName}</h3>
+                    <span className="employer__heading-dates">
+                      <time>{job.dates.start.toString()}</time> &ndash;{' '}
+                      <time>{job.dates.end.toString()}</time>
+                    </span>
+                  </div>
+                  <div className="employer__role">
+                    <h4 className="h4 employer__role-heading">{job.roleTitle}</h4>
+                    <section className="section employer__role-details">
+                      <ul>
+                        {job.askMeAbout.map((role, i) => {
+                          return (
+                            <li key={i}>
+                              {role}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </section>
+                  </div>
+                </section>
+              );
+            })}
+          </article>
+        </div>
       </div>
     );
-  }
-}
-
-/**
- * Define properties of CustomForm state.
- */
-interface ICustomInputState {
-  formValue: string;
-}
-
-class CustomForm extends Component<{}, ICustomInputState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      formValue: '',
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  public render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <CustomInput></CustomInput>
-        <input
-          type="submit"
-          value="Submit"
-        />
-      </form>
-    );
-  }
-
-  /**
-   * Handle form submission.
-   * @param {any} event Form submit event.
-   */
-  private handleSubmit(event: any) {
-    event.preventDefault();
-  }
-}
-
-class CustomInput extends Component<{}, ICustomInputState> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      formValue: '',
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  public render() {
-    return (
-      <label>
-        test:
-        <input
-          type="text"
-          value={this.state.formValue}
-          onChange={this.handleChange}
-        />
-      </label>
-    );
-  }
-
-  /**
-   * Update state based on change to input.
-   * @param {any} event Input change event.
-   */
-  private handleChange(event: any) {
-    this.setState({
-      formValue: event.target.value,
-    });
   }
 }
 
