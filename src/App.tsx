@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import logoSvg from './logo.svg';
 
-import './App.css';
+import './App.scss';
 
 /**
  * Top-level App component.
