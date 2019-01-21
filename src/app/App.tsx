@@ -2,7 +2,6 @@
 
 // tslint:disable-next-line:import-name
 import React, { Component } from 'react';
-import logoSvg from './logo.svg';
 
 import './App.css';
 
