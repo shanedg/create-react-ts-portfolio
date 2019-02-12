@@ -2,21 +2,139 @@
 
 // tslint:disable-next-line:import-name
 import React, { Component } from 'react';
-import logoSvg from './logo.svg';
 
 import './App.scss';
+
+const Header = (props: any) => {
+  return (
+    <header className="header">
+      <h1 className="h1">shane garrity</h1>
+    </header>
+  );
+};
+
+const Nav = (props: any) => {
+  return (
+    <nav className="Nav">
+      <ul>
+        {/* <li><NavLink>home</NavLink></li> */}
+      </ul>
+    </nav>
+  );
+};
+
+const About = (props: any) => {
+  return (
+    <section className="about">
+      <h2>about</h2>
+      <p>
+        shane is an experienced developer with a background in front end and
+        generalist work. he lives and works in nyc.
+      </p>
+    </section>
+  );
+};
+
+const Contact = (props: any) => {
+  return (
+    <section className="contact">
+      <h2>talk to me</h2>
+      <p>
+        check out my{' '}
+        <a
+          href="https://github.com/shanedg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github
+        </a>{' '}
+        or connect with me on{' '}
+        <a
+          href="https://www.linkedin.com/in/shane-garrity-ba915544"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          linkedin
+        </a>{' '}
+        or shoot me an <a href="mailto:shanedgarrity+ws@gmail.com">email</a>
+      </p>
+    </section>
+  );
+};
+
+const Details = (props: any) => {
+  const details = props.details;
+
+  return (
+    <div className="employer__role">
+      <h4 className="h4 employer__role-heading">{details.title}</h4>
+      <section className="section employer__role-details">
+        <ul>
+          {details.bullets.map((role: any, i: number) => {
+            return (
+              <li key={i}>
+                {role}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </div>
+  );
+};
+
+const Job = (props: any) => {
+  const job = props.job;
+  const details = {
+    title: job.roleTitle,
+    bullets: job.bullets,
+  };
+
+  return (
+    <section className="employer">
+      <div className="employer__heading">
+        <h3 className="h3 employer__heading-name">
+          {job.employerName}
+        </h3>
+        <span className="employer__heading-dates">
+          <time>{job.dates.start.toString()}</time> &ndash;{' '}
+          <time>{job.dates.end.toString()}</time>
+        </span>
+      </div>
+      <Details details={details} />
+    </section>
+  );
+};
+
+const Work = (props: any) => {
+  return (
+    <article className="article work">
+      <h2 className="h2">work</h2>
+      {props.jobs.map((job: any, index: number) => {
+
+        return (
+          <Job
+            job={job}
+            key={index}
+          />
+        );
+      })}
+    </article>
+  );
+};
 
 /**
  * Top-level App component.
  */
 class App extends Component {
+
   public render() {
     /**
      * Simple resumé details.
      */
-    const work = [
+    const jobs = [
       {
-        askMeAbout: ['angular', 'reactive forms', 'material ui'],
+        bullets: ['angular', 'reactive forms', 'material ui'],
         dates: {
           end: 'present',
           start: new Date('2018-11-05'),
@@ -25,7 +143,7 @@ class App extends Component {
         roleTitle: 'front end developer',
       },
       {
-        askMeAbout: [
+        bullets: [
           'node, craftcms, wordpress',
           'react and vue js',
           'experimentation & personalization',
@@ -39,7 +157,7 @@ class App extends Component {
         roleTitle: 'web engineer',
       },
       {
-        askMeAbout: [
+        bullets: [
           'conversion optimization, a/b testing',
           'integrating tech in the enterprise',
           'responsive vs adaptive front end development',
@@ -56,77 +174,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App__inner">
-          <header className="header">
-            <h1 className="h1">shane garrity</h1>
-          </header>
-
-          <nav className="nav">
-            <ul>
-              {/* <li><NavLink>home</NavLink></li> */}
-            </ul>
-          </nav>
-
-          <section className="about">
-            <h2>about</h2>
-            <p>
-              shane is an experienced developer with a background in front end and
-              generalist work. he lives and works in nyc.
-            </p>
-          </section>
-
-          <section className="contact">
-            <h2>talk to me</h2>
-            <p>
-              check out my{' '}
-              <a
-                href="https://github.com/shanedg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github
-              </a>{' '}
-              or connect with me on{' '}
-              <a
-                href="https://www.linkedin.com/in/shane-garrity-ba915544"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                linkedin
-              </a>{' '}
-              or shoot me an <a href="mailto:shanedgarrity+ws@gmail.com">email</a>
-            </p>
-          </section>
-
-          <article className="article work">
-            <h2 className="h2">work</h2>
-            {work.map((job, index) => {
-              return (
-                <section key={index} className="employer">
-                  <div className="employer__heading">
-                    <h3 className="h3 employer__heading-name">{job.employerName}</h3>
-                    <span className="employer__heading-dates">
-                      <time>{job.dates.start.toString()}</time> &ndash;{' '}
-                      <time>{job.dates.end.toString()}</time>
-                    </span>
-                  </div>
-                  <div className="employer__role">
-                    <h4 className="h4 employer__role-heading">{job.roleTitle}</h4>
-                    <section className="section employer__role-details">
-                      <ul>
-                        {job.askMeAbout.map((role, i) => {
-                          return (
-                            <li key={i}>
-                              {role}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </section>
-                  </div>
-                </section>
-              );
-            })}
-          </article>
+          <Header />
+          <Nav />
+          <About />
+          <Contact />
+          <Work jobs={jobs} />
         </div>
       </div>
     );
