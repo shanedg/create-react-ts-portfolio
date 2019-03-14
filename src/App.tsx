@@ -3,6 +3,10 @@
 // tslint:disable-next-line:import-name
 import React, { Component } from 'react';
 
+import { AnimatedSwitch } from 'react-router-transition';
+import { NavLink } from 'react-router-dom';
+import { Route } from 'react-router';
+
 import './App.scss';
 
 const Header = (props: any) => {
@@ -16,9 +20,13 @@ const Header = (props: any) => {
 const Nav = (props: any) => {
   return (
     <nav className="Nav">
-      <ul>
-        {/* <li><NavLink>home</NavLink></li> */}
-      </ul>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <NavLink to="/contact/">Contact</NavLink>
+      </li>
+      {/* [todo] work route */}
     </nav>
   );
 };
@@ -28,8 +36,8 @@ const About = (props: any) => {
     <section className="about">
       <h2>about</h2>
       <p>
-        shane is an experienced developer with a background in front end and
-        generalist work. he lives and works in nyc.
+        shane is an experienced web developer with a background in front
+        end dev and generalist work. he lives and works in nyc.
       </p>
     </section>
   );
@@ -62,6 +70,7 @@ const Contact = (props: any) => {
   );
 };
 
+// [todo] strong type for DetailsProps
 const Details = (props: any) => {
   const details = props.details;
 
@@ -70,6 +79,7 @@ const Details = (props: any) => {
       <h4 className="h4 employer__role-heading">{details.title}</h4>
       <section className="section employer__role-details">
         <ul>
+          {/* [todo] strong type for role */}
           {details.bullets.map((role: any, i: number) => {
             return (
               <li key={i}>
@@ -83,8 +93,11 @@ const Details = (props: any) => {
   );
 };
 
+// [todo] strong type for JobProps
 const Job = (props: any) => {
+  // [todo] Job
   const job = props.job;
+  // [todo] DetailsProps
   const details = {
     title: job.roleTitle,
     bullets: job.bullets,
@@ -106,6 +119,7 @@ const Job = (props: any) => {
   );
 };
 
+// [todo] strong type for WorkProps
 const Work = (props: any) => {
   return (
     <article className="article work">
@@ -128,9 +142,14 @@ const Work = (props: any) => {
  */
 class App extends Component {
 
+  constructor(props: any) {
+    super(props);
+  }
+
   public render() {
     /**
      * Simple resumé details.
+     * [todo] strong type for Jobs[]
      */
     const jobs = [
       {
@@ -176,9 +195,16 @@ class App extends Component {
         <div className="App__inner">
           <Header />
           <Nav />
-          <About />
-          <Contact />
-          <Work jobs={jobs} />
+          <AnimatedSwitch
+            // [todo] interesting transitions
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+            className="switch-wrapper"
+          >
+            <Route exact path="/" component={About} />
+            <Route exact path="/contact/" component={Contact} />
+          </AnimatedSwitch>
         </div>
       </div>
     );
