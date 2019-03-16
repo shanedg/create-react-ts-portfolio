@@ -10,13 +10,9 @@ type Dates = {
   end: 'present' | Date;
 }
 
-type Details = {
+type RoleDetailsProps = {
   bullets: string[];
   title: string;
-}
-
-type DetailsProps = {
-  details: Details;
 }
 
 type Job = {

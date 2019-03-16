@@ -1,11 +1,11 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
-import Details from './Details';
+import RoleDetails from './RoleDetails';
 
 const Job = (props: JobProps) => {
   const job: Job = props.job;
-  const details: Details = {
+  const details: RoleDetailsProps = {
     title: job.roleTitle,
     bullets: job.bullets,
   };
@@ -21,7 +21,10 @@ const Job = (props: JobProps) => {
           <time>{job.dates.end.toString()}</time>
         </span>
       </div>
-      <Details details={details} />
+      <RoleDetails
+        bullets={details.bullets}
+        title={details.title}
+      />
     </section>
   );
 };
