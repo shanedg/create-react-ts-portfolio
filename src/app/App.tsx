@@ -37,6 +37,7 @@ class App extends Component {
           >
             <Route exact path="/" component={About} />
             <Route exact path="/contact/" component={Contact} />
+            <Route exact path="/work/" component={Work} />
           </AnimatedSwitch>
         </div>
       </div>

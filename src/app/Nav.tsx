@@ -12,7 +12,9 @@ const Nav = (props: any) => {
       <li>
         <NavLink to="/contact/">Contact</NavLink>
       </li>
-      {/* [todo] work route */}
+      <li>
+        <NavLink to="/work/">Work</NavLink>
+      </li>
     </nav>
   );
 };
