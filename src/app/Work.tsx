@@ -9,13 +9,31 @@ const Work = (props: any) => {
    */
   const jobs: Job[] = [
     {
-      bullets: ['angular', 'reactive forms', 'material ui'],
+      bullets: [
+        'iterate on core product family of angular (6+) apps, including new feature development and product configurability',
+        'legacy client product maintenance across family of angular (5+) apps',
+        'build internal tools for product configuration, internal testing, and quality assurance',
+      ],
       dates: {
         end: 'present',
         start: new Date('2018-11-05'),
       },
       employerName: 'zipari',
       roleTitle: 'front end developer',
+    },
+    {
+      bullets: [
+        'migrated marketing site lead capture and tracking from marketo to eloqua',
+        'resolved cms-driven content configuration breaking dynamic components',
+        'performed minor cosmetic updates',
+        'all work on per project basis',
+      ],
+      dates: {
+        end: new Date('2019-03-31'),
+        start: new Date('2018-11-27'),
+      },
+      employerName: 'workmarket / adp (freelance)',
+      roleTitle: 'contract web engineer',
     },
     {
       bullets: [
@@ -41,7 +59,7 @@ const Work = (props: any) => {
         end: new Date('2017-07-06'),
         start: new Date('2014-06-16'),
       },
-      employerName: "dick's sporting goods",
+      employerName: 'dick\'s sporting goods',
       roleTitle: 'front end web developer',
     },
   ];
