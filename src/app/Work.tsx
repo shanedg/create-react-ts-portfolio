@@ -3,13 +3,11 @@ import React from 'react';
 
 import Job from './Job';
 
-// [todo] strong type for WorkProps
 const Work = (props: any) => {
   /**
    * Simple resumé details.
-   * [todo] strong type for Jobs[]
    */
-  const jobs = [
+  const jobs: Job[] = [
     {
       bullets: ['angular', 'reactive forms', 'material ui'],
       dates: {
@@ -51,7 +49,7 @@ const Work = (props: any) => {
   return (
     <article className="article work">
       <h2 className="h2">work</h2>
-      {props.jobs.map((job: any, index: number) => {
+      {jobs.map((job: Job, index: number) => {
 
         return (
           <Job

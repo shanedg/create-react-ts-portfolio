@@ -3,12 +3,9 @@ import React from 'react';
 
 import Details from './Details';
 
-// [todo] strong type for JobProps
-const Job = (props: any) => {
-  // [todo] Job
-  const job = props.job;
-  // [todo] DetailsProps
-  const details = {
+const Job = (props: JobProps) => {
+  const job: Job = props.job;
+  const details: Details = {
     title: job.roleTitle,
     bullets: job.bullets,
   };

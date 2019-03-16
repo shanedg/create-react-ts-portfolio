@@ -1,8 +1,7 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
-// [todo] strong type for DetailsProps
-const Details = (props: any) => {
+const Details = (props: DetailsProps) => {
   const details = props.details;
 
   return (
@@ -10,8 +9,7 @@ const Details = (props: any) => {
       <h4 className="h4 employer__role-heading">{details.title}</h4>
       <section className="section employer__role-details">
         <ul>
-          {/* [todo] strong type for role */}
-          {details.bullets.map((role: any, i: number) => {
+          {details.bullets.map((role: string, i: number) => {
             return (
               <li key={i}>
                 {role}
