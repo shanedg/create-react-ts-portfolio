@@ -2,23 +2,33 @@
 import React from 'react';
 
 const RoleDetails = (props: RoleDetailsProps) => {
+
+  /**
+   * build role details highlight list item
+   * @param highlight list item text
+   * @param i list item index
+   * @returns
+   */
+  const buildListItem = (highlight: string, i: number) => {
+    return (
+      <li className="role-details__list-item" key={i}>
+        {highlight}
+      </li>
+    );
+  };
+
   const title = props.title;
-  const bullets = props.bullets;
+  const highlights = props.highlights;
+  const highlightsList = highlights.map(buildListItem);
 
   return (
-    <div className="employer__role">
-      <h4 className="h4 employer__role-heading">
+    <div className="role-details">
+      <h4 className="role-details__heading">
         {title}
       </h4>
-      <section className="section employer__role-details">
+      <section className="role-details__highlights">
         <ul>
-          {bullets.map((role: string, i: number) => {
-            return (
-              <li key={i}>
-                {role}
-              </li>
-            );
-          })}
+          {highlightsList}
         </ul>
       </section>
     </div>
