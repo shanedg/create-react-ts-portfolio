@@ -12,7 +12,6 @@ import './App.scss';
 import About from './About';
 import Contact from './Contact';
 import Header from './Header';
-import Nav from './Nav';
 import Footer from './Footer';
 import Work from './Work';
 
@@ -82,7 +81,6 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <Nav />
         <AnimatedSwitch
           atEnter={routeEnter}
           atLeave={routeLeave}
