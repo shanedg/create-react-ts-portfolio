@@ -30,3 +30,13 @@ type RoleDetailsProps = {
 type RoleProps = {
   role: Role;
 }
+
+type RouteStyles = {
+  left: string;
+  opacity: number;
+}
+
+type RouteStylesNumeric = {
+  left: number;
+  opacity: number;
+}
