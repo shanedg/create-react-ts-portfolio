@@ -2,29 +2,31 @@
 import React from 'react';
 
 const Contact = (props: any) => {
+
+  /**
+   * github username
+   */
+  const github = <p>check out <a href="https://github.com/shanedg" target="_blank" rel="noopener noreferrer">shanedg on github</a></p>;
+
+  /**
+   * linkedin profile
+   */
+  const linkedin = <p>connect on <a href="https://www.linkedin.com/in/shane-garrity-ba915544" target="_blank" rel="noopener noreferrer">linkedin</a></p>;
+
+  /**
+   * email address
+   */
+  const email = <p>send an <a href="mailto:shanedgarrity+ws@gmail.com">email</a></p>;
+
   return (
-    <section className="contact">
-      <h2>talk to me</h2>
-      <p>
-        check out my{' '}
-        <a
-          href="https://github.com/shanedg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          github
-        </a>{' '}
-        or connect with me on{' '}
-        <a
-          href="https://www.linkedin.com/in/shane-garrity-ba915544"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          linkedin
-        </a>{' '}
-        or shoot me an <a href="mailto:shanedgarrity+ws@gmail.com">email</a>
-      </p>
-    </section>
+    <article className="contact">
+      <div className="heading">
+        <h2 className="heading__title">contact</h2>
+      </div>
+      {github}
+      {linkedin}
+      {email}
+    </article>
   );
 };
 
