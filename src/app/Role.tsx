@@ -8,35 +8,37 @@ const Role = (props: RoleProps) => {
   /**
    * name of role employer
    */
-  const employerName = props.job.employerName;
+  const employer = props.role.employer;
 
   /**
    * role start date
    */
-  const started = props.job.dates.start
-    ? props.job.dates.start.toString()
+  const started = props.role.dates.start
+    ? props.role.dates.start.toString()
     : null ;
 
   /**
    * role end date
    */
-  const until = props.job.dates.end
-    ? props.job.dates.end.toString()
+  const until = props.role.dates.until
+    ? props.role.dates.until.toString()
     : null ;
 
   /**
-   * role title and highlights
+   * role highlights to include in role details
    */
-  const details: RoleDetailsProps = {
-    title: props.job.roleTitle,
-    highlights: props.job.highlights,
-  };
+  const highlights = props.role.highlights;
+
+  /**
+   * role title to include in role details
+   */
+  const title = props.role.title;
 
   return (
     <section className="role">
       <div className="role__heading">
         <h3 className="role__employer">
-          {employerName}
+          {employer}
         </h3>
         {/* [todo] extract date/range into own component/s */}
         <span className="role__employment-dates">
@@ -49,8 +51,8 @@ const Role = (props: RoleProps) => {
         </span>
       </div>
       <RoleDetails
-        highlights={details.highlights}
-        title={details.title}
+        highlights={highlights}
+        title={title}
       />
     </section>
   );
