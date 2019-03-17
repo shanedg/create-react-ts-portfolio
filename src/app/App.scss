@@ -8,6 +8,23 @@ h1 {
   width: 100vw;
 }
 
+.nav {
+  display: block;
+  margin: 0 0 1rem;
+
+  .nav__u-list {
+    display: flex;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    .nav__u-list-item {
+      margin: 0 1rem 0 0;
+    }
+  }
+}
+
 // animated route transitions
 .app__switch {
   position: relative;
