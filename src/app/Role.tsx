@@ -1,6 +1,7 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
+import RoleEmploymentDates from './RoleEmploymentDates';
 import RoleDetails from './RoleDetails';
 
 const Role = (props: RoleProps) => {
@@ -40,15 +41,10 @@ const Role = (props: RoleProps) => {
         <h3 className="role__employer">
           {employer}
         </h3>
-        {/* [todo] extract date/range into own component/s */}
-        <span className="role__employment-dates">
-          <time>
-            {started}
-          </time> &ndash;{' '}
-          <time>
-            {until}
-          </time>
-        </span>
+        <RoleEmploymentDates
+          started={started}
+          until={until}
+        />
       </div>
       <RoleDetails
         highlights={highlights}

@@ -4,10 +4,10 @@ import React from 'react';
 const RoleDetails = (props: RoleDetailsProps) => {
 
   /**
-   * build role details highlight list item
+   * build role details highlights list item
    * @param highlight list item text
    * @param i list item index
-   * @returns
+   * @returns list item populated with highlight text
    */
   const buildListItem = (highlight: string, i: number) => {
     return (
@@ -17,8 +17,19 @@ const RoleDetails = (props: RoleDetailsProps) => {
     );
   };
 
+  /**
+   * role title
+   */
   const title = props.title;
+
+  /**
+   * role highlights
+   */
   const highlights = props.highlights;
+
+  /**
+   * list items populated with role highlights
+   */
   const highlightsList = highlights.map(buildListItem);
 
   return (

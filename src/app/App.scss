@@ -33,10 +33,6 @@ h1, h2, h3, h4 {
   }
 }
 
-.heading {
-  margin: 0 0 1rem 0;
-}
-
 // animated route transitions
 .app__switch {
   position: relative;
@@ -45,4 +41,12 @@ h1, h2, h3, h4 {
     position: absolute;
     width: calc(100vw - 2rem);
   }
+}
+
+.heading {
+  margin: 0 0 1rem 0;
+}
+
+.role-employment-dates {
+  text-transform: lowercase;
 }
