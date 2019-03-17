@@ -1,7 +1,10 @@
 // tslint:disable-next-line:import-name
 import React, { Component } from 'react';
 
-import { AnimatedSwitch } from 'react-router-transition';
+import {
+  spring,
+  AnimatedSwitch,
+} from 'react-router-transition';
 import { Route } from 'react-router';
 
 import './App.scss';
@@ -22,18 +25,39 @@ class App extends Component {
    * @param styles numeric style object
    * @returns style object with transformed string style values
    */
-  mapStyles = (styles: any) => {
+  mapStyles = (styles: RouteStylesNumeric): RouteStyles => {
     return {
       left: `${styles.left}vw`,
       opacity: styles.opacity,
     }
   };
 
+  /**
+   * @param val animation value to apply spring to
+   * @returns animation spring helper
+   */
+  bounce = (val: number) => {
+    return spring(val, {
+      stiffness: this.springStiffness,
+      damping: this.springDamping,
+    });
+  }
+
+  /**
+   * route transition bounce stiffness
+   */
+  springStiffness = 200;
+
+  /**
+   * route transition bounce damping
+   */
+  springDamping = 22;
+
   public render() {
     /**
      * entering route style start state
      */
-    const routeEnter = {
+    const routeEnter: RouteStylesNumeric = {
       left: 200,
       opacity: 0,
     };
@@ -41,16 +65,16 @@ class App extends Component {
     /**
      * exiting route style end state
      */
-    const routeLeave = {
-      left: -200,
+    const routeLeave: RouteStylesNumeric = {
+      left: this.bounce(-200),
       opacity: 0,
     };
 
     /**
      * active route styles
      */
-    const routeActive = {
-      left: 0,
+    const routeActive: RouteStylesNumeric = {
+      left: this.bounce(0),
       opacity: 1,
     };
 

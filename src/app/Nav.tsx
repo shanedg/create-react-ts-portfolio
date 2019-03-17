@@ -6,15 +6,17 @@ import { NavLink } from 'react-router-dom';
 const Nav = (props: any) => {
   return (
     <nav className="nav">
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/contact/">Contact</NavLink>
-      </li>
-      <li>
-        <NavLink to="/work/">Work</NavLink>
-      </li>
+      <ul className="nav__u-list">
+        <li className="nav__u-list-item">
+          <NavLink to="/">home</NavLink>
+        </li>
+        <li className="nav__u-list-item">
+          <NavLink to="/contact/">contact</NavLink>
+        </li>
+        <li className="nav__u-list-item">
+          <NavLink to="/work/">work</NavLink>
+        </li>
+      </ul>
     </nav>
   );
 };

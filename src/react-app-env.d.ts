@@ -5,9 +5,21 @@
  */
 declare module 'react-router-transition';
 
-type Dates = {
-  start: string | Date;
-  end: 'present' | Date;
+type RawDateRange = {
+  start: string;
+  until: string;
+}
+
+type Role = {
+  highlights: string[];
+  dates: RawDateRange;
+  employer: string;
+  title: string;
+}
+
+type RoleDatesProps = {
+  started: string | null;
+  until: string | null;
 }
 
 type RoleDetailsProps = {
@@ -15,13 +27,16 @@ type RoleDetailsProps = {
   title: string;
 }
 
-type Role = {
-  highlights: string[];
-  dates: Dates;
-  employerName: string;
-  roleTitle: string;
+type RoleProps = {
+  role: Role;
 }
 
-type RoleProps = {
-  job: Role;
+type RouteStyles = {
+  left: string;
+  opacity: number;
+}
+
+type RouteStylesNumeric = {
+  left: number;
+  opacity: number;
 }
