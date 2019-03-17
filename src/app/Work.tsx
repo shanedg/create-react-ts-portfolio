@@ -31,7 +31,9 @@ const Work = (props: any) => {
       <div className="heading">
         <h2 className="heading__title">work</h2>
       </div>
-      {builtRoles}
+      <section className="content">
+        {builtRoles}
+      </section>
     </article>
   );
 };

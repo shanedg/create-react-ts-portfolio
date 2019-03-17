@@ -1,29 +1,44 @@
-h1, h2, h3, h4 {
+$header-bottom-margin: 1rem;
+$common-padding: 1rem;
+
+h1, h2, h3, h4, p {
   margin: 0;
 }
 
 .app {
   display: block;
   height: 100vh;
+  // height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
-  overflow: scroll;
-  padding: 1rem;
-  box-sizing: border-box;
 }
 
 .footer {
-  height: 10vh;
+  border-top: 1px solid;
+  // height: 10vh;
+  height: calc(var(--vh, 1vh) * 10);
   padding: $common-padding;
+
+  // position: fixed;
+  // bottom: 0;
+  // width: 100vw;
+  // z-index: 100;
+  transition: height 125ms ease-out;
 }
 
 .header {
   display: block;
-  margin: 0 0 1rem;
+  // height: 15vh;
+  height: calc(var(--vh, 1vh) * 17);
+  padding: $common-padding;
+
+  // position: fixed;
+  // width: 100vw;
+  // z-index: 100;
+  transition: height 125ms ease-out;
 }
 
 .nav {
   display: block;
-  margin: 0 0 1rem;
 
   .nav__u-list {
     display: flex;
@@ -41,15 +56,30 @@ h1, h2, h3, h4 {
 // animated route transitions
 .app__switch {
   position: relative;
+  // height: calc(75vh + 2px);
+  height: calc(var(--vh, 1vh) * 73);
 
   > div {
+    // margin-top: 15vh;
+    // margin-top: calc(var(--vh, 1vh) * 17);
     position: absolute;
-    width: calc(100vw - 2rem);
+    width: 100vw;
   }
 }
 
 .heading {
-  margin: 0 0 1rem 0;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: $common-padding;
+  height: 4rem;
+}
+
+.content {
+  // height: calc(75vh - 4rem);
+  height: calc(var(--vh, 1vh) * 73 - 4rem);
+  overflow-y: scroll;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
 }
 
 .role-employment-dates {

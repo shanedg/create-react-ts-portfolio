@@ -20,6 +20,30 @@ import Work from './Work';
  */
 class App extends Component {
 
+  actualHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  componentDidMount() {
+    /**
+     * check for window context
+     */
+    if (window) {
+      /**
+       * calculate initial viewport height
+       */
+      this.actualHeight();
+
+      /**
+       * recalculate viewport height on resize
+       */
+      window.addEventListener('resize', () => {
+        this.actualHeight();
+      });
+    }
+  }
+
   /**
    * map numeric values to non-numeric string styles
    * @param styles numeric style object
