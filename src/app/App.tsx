@@ -13,6 +13,7 @@ import About from './About';
 import Contact from './Contact';
 import Header from './Header';
 import Nav from './Nav';
+import Footer from './Footer';
 import Work from './Work';
 
 /**
@@ -93,6 +94,7 @@ class App extends Component {
           <Route exact path="/contact/" component={Contact} />
           <Route exact path="/work/" component={Work} />
         </AnimatedSwitch>
+        <Footer />
       </div>
     );
   }
