@@ -11,17 +11,17 @@ type Dates = {
 }
 
 type RoleDetailsProps = {
-  bullets: string[];
+  highlights: string[];
   title: string;
 }
 
-type Job = {
-  bullets: string[];
+type Role = {
+  highlights: string[];
   dates: Dates;
   employerName: string;
   roleTitle: string;
 }
 
-type JobProps = {
-  job: Job;
+type RoleProps = {
+  job: Role;
 }

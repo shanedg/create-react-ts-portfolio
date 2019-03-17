@@ -1,15 +1,15 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
-import Job from './Job';
+import Role from './Role';
 
 const Work = (props: any) => {
   /**
    * Simple resumé details.
    */
-  const jobs: Job[] = [
+  const jobs: Role[] = [
     {
-      bullets: [
+      highlights: [
         'iterate on core product family of angular (6+) apps, including new feature development and product configurability',
         'legacy client product maintenance across family of angular (5+) apps',
         'build internal tools for product configuration, internal testing, and quality assurance',
@@ -22,7 +22,7 @@ const Work = (props: any) => {
       roleTitle: 'front end developer',
     },
     {
-      bullets: [
+      highlights: [
         'migrated marketing site lead capture and tracking from marketo to eloqua',
         'resolved cms-driven content configuration breaking dynamic components',
         'performed minor cosmetic updates',
@@ -36,7 +36,7 @@ const Work = (props: any) => {
       roleTitle: 'contract web engineer',
     },
     {
-      bullets: [
+      highlights: [
         'node, craftcms, wordpress',
         'react and vue js',
         'experimentation & personalization',
@@ -50,7 +50,7 @@ const Work = (props: any) => {
       roleTitle: 'web engineer',
     },
     {
-      bullets: [
+      highlights: [
         'conversion optimization, a/b testing',
         'integrating tech in the enterprise',
         'responsive vs adaptive front end development',
@@ -67,10 +67,10 @@ const Work = (props: any) => {
   return (
     <article className="article work">
       <h2 className="h2">work</h2>
-      {jobs.map((job: Job, index: number) => {
+      {jobs.map((job: Role, index: number) => {
 
         return (
-          <Job
+          <Role
             job={job}
             key={index}
           />
