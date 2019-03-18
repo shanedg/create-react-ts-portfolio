@@ -23,9 +23,11 @@ const Contact = (props: any) => {
       <div className="heading">
         <h2 className="heading__title">contact</h2>
       </div>
-      {github}
-      {linkedin}
-      {email}
+      <section className="content">
+        {github}
+        {linkedin}
+        {email}
+      </section>
     </article>
   );
 };

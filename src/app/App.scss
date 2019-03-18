@@ -1,4 +1,7 @@
-h1, h2, h3, h4 {
+$header-bottom-margin: 1rem;
+$common-padding: 1rem;
+
+h1, h2, h3, h4, p {
   margin: 0;
 }
 
@@ -6,19 +9,28 @@ h1, h2, h3, h4 {
   display: block;
   height: 100vh;
   width: 100vw;
-  overflow: scroll;
-  padding: 1rem;
-  box-sizing: border-box;
+}
+
+.footer {
+  border-top: 1px solid;
+  height: 10vh; // fallback for css var()
+  height: calc(var(--vh, 1vh) * 10);
+  min-height: 4rem;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
 }
 
 .header {
   display: block;
-  margin: 0 0 1rem;
+  height: 17vh; // fallback for css var()
+  height: calc(var(--vh, 1vh) * 17);
+  min-height: 105px;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
 }
 
 .nav {
   display: block;
-  margin: 0 0 1rem;
 
   .nav__u-list {
     display: flex;
@@ -36,15 +48,30 @@ h1, h2, h3, h4 {
 // animated route transitions
 .app__switch {
   position: relative;
+  height: 73vh; // fallback for css var()
+  height: calc(var(--vh, 1vh) * 73);
+  min-height: 150px;
 
   > div {
     position: absolute;
-    width: calc(100vw - 2rem);
+    width: 100vw;
   }
 }
 
 .heading {
-  margin: 0 0 1rem 0;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+  padding: $common-padding;
+  height: 4rem;
+}
+
+.content {
+  height: calc(73vh - 4rem); // fallback for css var()
+  height: calc(var(--vh, 1vh) * 73 - 4rem);
+  min-height: calc(150px - 4rem);
+  overflow-y: scroll;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
 }
 
 .role-employment-dates {

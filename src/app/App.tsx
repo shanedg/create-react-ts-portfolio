@@ -12,13 +12,40 @@ import './App.scss';
 import About from './About';
 import Contact from './Contact';
 import Header from './Header';
-import Nav from './Nav';
+import Footer from './Footer';
 import Work from './Work';
 
 /**
  * app main
  */
 class App extends Component {
+
+  /**
+   * substitute vh units to account for mobile address bar
+   *
+   * reworked solution from css-tricks:
+   * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   */
+  actualViewportHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  }
+
+  componentDidMount() {
+    /**
+     * check for window context
+     */
+    if (window) {
+      /**
+       * recalculate viewport height on resize only
+       * vh units work fine with mobile address bar present (init).
+       * calculation fixes layout on address bar hide.
+       */
+      window.addEventListener('resize', () => {
+        this.actualViewportHeight();
+      });
+    }
+  }
 
   /**
    * map numeric values to non-numeric string styles
@@ -81,7 +108,6 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <Nav />
         <AnimatedSwitch
           atEnter={routeEnter}
           atLeave={routeLeave}
@@ -93,6 +119,7 @@ class App extends Component {
           <Route exact path="/contact/" component={Contact} />
           <Route exact path="/work/" component={Work} />
         </AnimatedSwitch>
+        <Footer />
       </div>
     );
   }
