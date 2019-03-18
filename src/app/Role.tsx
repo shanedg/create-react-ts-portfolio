@@ -1,6 +1,8 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
+import './Role.scss';
+
 import RoleEmploymentDates from './RoleEmploymentDates';
 import RoleDetails from './RoleDetails';
 

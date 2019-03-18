@@ -1,0 +1,12 @@
+@import 'App.constants.scss';
+
+.header {
+  display: block;
+  height: 17vh; // fallback for css var()
+  height: calc(var(--vh, 1vh) * 17);
+  min-height: 105px;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
+  background-color: $app-primary-bg-color;
+  color: $app-primary-text-color;
+}
