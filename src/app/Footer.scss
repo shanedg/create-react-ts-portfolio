@@ -1,0 +1,11 @@
+@import 'App.constants.scss';
+
+.footer {
+  height: 10vh; // fallback for css var()
+  height: calc(var(--vh, 1vh) * 10);
+  min-height: 4rem;
+  padding: $common-padding;
+  transition: height 125ms ease-out;
+  background-color: $app-primary-bg-color;
+  color: $app-primary-text-color;
+}

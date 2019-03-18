@@ -1,6 +1,8 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
+import './Header.scss';
+
 import Nav from './Nav';
 
 const Header = (props: any) => {

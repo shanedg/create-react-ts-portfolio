@@ -1,6 +1,8 @@
 // tslint:disable-next-line:import-name
 import React from 'react';
 
+import './Nav.scss';
+
 import { NavLink } from 'react-router-dom';
 
 const Nav = (props: any) => {
@@ -9,13 +11,13 @@ const Nav = (props: any) => {
     <nav className="nav">
       <ul className="nav__u-list">
         <li className="nav__u-list-item">
-          <NavLink to="/">home</NavLink>
+          <NavLink exact activeClassName="nav__link_active" to="/">home</NavLink>
         </li>
         <li className="nav__u-list-item">
-          <NavLink to="/contact/">contact</NavLink>
+          <NavLink exact activeClassName="nav__link_active" to="/contact/">contact</NavLink>
         </li>
         <li className="nav__u-list-item">
-          <NavLink to="/work/">work</NavLink>
+          <NavLink exact activeClassName="nav__link_active" to="/work/">work</NavLink>
         </li>
       </ul>
     </nav>

@@ -1,7 +1,4 @@
-$header-bottom-margin: 1rem;
-$common-padding: 1rem;
-
-$sm-breakpoint: 768px;
+@import 'App.constants.scss';
 
 h1, h2, h3, h4, p {
   margin: 0;
@@ -16,40 +13,6 @@ h1, h2, h3, h4, p {
   @media (min-width: $sm-breakpoint) {
     overflow: visible;
     max-width: $sm-breakpoint;
-  }
-}
-
-.footer {
-  border-top: 1px solid;
-  height: 10vh; // fallback for css var()
-  height: calc(var(--vh, 1vh) * 10);
-  min-height: 4rem;
-  padding: $common-padding;
-  transition: height 125ms ease-out;
-}
-
-.header {
-  display: block;
-  height: 17vh; // fallback for css var()
-  height: calc(var(--vh, 1vh) * 17);
-  min-height: 105px;
-  padding: $common-padding;
-  transition: height 125ms ease-out;
-}
-
-.nav {
-  display: block;
-
-  .nav__u-list {
-    display: flex;
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-
-    .nav__u-list-item {
-      margin: 0 1rem 0 0;
-    }
   }
 }
 
@@ -72,8 +35,6 @@ h1, h2, h3, h4, p {
 }
 
 .heading {
-  border-bottom: 1px solid;
-  border-top: 1px solid;
   padding: $common-padding;
   height: 4rem;
 }
