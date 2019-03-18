@@ -20,7 +20,13 @@ import Work from './Work';
  */
 class App extends Component {
 
-  actualHeight() {
+  /**
+   * substitute vh units to account for mobile address bar
+   *
+   * reworked solution from css-tricks:
+   * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+   */
+  actualViewportHeight() {
     const vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
   }
@@ -31,15 +37,12 @@ class App extends Component {
      */
     if (window) {
       /**
-       * calculate initial viewport height
-       */
-      this.actualHeight();
-
-      /**
-       * recalculate viewport height on resize
+       * recalculate viewport height on resize only
+       * vh units work fine with mobile address bar present (init).
+       * calculation fixes layout on address bar hide.
        */
       window.addEventListener('resize', () => {
-        this.actualHeight();
+        this.actualViewportHeight();
       });
     }
   }

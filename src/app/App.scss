@@ -8,32 +8,24 @@ h1, h2, h3, h4, p {
 .app {
   display: block;
   height: 100vh;
-  // height: calc(var(--vh, 1vh) * 100);
   width: 100vw;
 }
 
 .footer {
   border-top: 1px solid;
-  // height: 10vh;
+  height: 10vh; // fallback for css var()
   height: calc(var(--vh, 1vh) * 10);
+  min-height: 4rem;
   padding: $common-padding;
-
-  // position: fixed;
-  // bottom: 0;
-  // width: 100vw;
-  // z-index: 100;
   transition: height 125ms ease-out;
 }
 
 .header {
   display: block;
-  // height: 15vh;
+  height: 17vh; // fallback for css var()
   height: calc(var(--vh, 1vh) * 17);
+  min-height: 105px;
   padding: $common-padding;
-
-  // position: fixed;
-  // width: 100vw;
-  // z-index: 100;
   transition: height 125ms ease-out;
 }
 
@@ -56,12 +48,11 @@ h1, h2, h3, h4, p {
 // animated route transitions
 .app__switch {
   position: relative;
-  // height: calc(75vh + 2px);
+  height: 73vh; // fallback for css var()
   height: calc(var(--vh, 1vh) * 73);
+  min-height: 150px;
 
   > div {
-    // margin-top: 15vh;
-    // margin-top: calc(var(--vh, 1vh) * 17);
     position: absolute;
     width: 100vw;
   }
@@ -75,8 +66,9 @@ h1, h2, h3, h4, p {
 }
 
 .content {
-  // height: calc(75vh - 4rem);
+  height: calc(73vh - 4rem); // fallback for css var()
   height: calc(var(--vh, 1vh) * 73 - 4rem);
+  min-height: calc(150px - 4rem);
   overflow-y: scroll;
   padding: $common-padding;
   transition: height 125ms ease-out;
