@@ -1,14 +1,22 @@
 $header-bottom-margin: 1rem;
 $common-padding: 1rem;
 
+$sm-breakpoint: 768px;
+
 h1, h2, h3, h4, p {
   margin: 0;
 }
 
 .app {
   display: block;
+  margin: 0 auto;
   height: 100vh;
   width: 100vw;
+
+  @media (min-width: $sm-breakpoint) {
+    overflow: visible;
+    max-width: $sm-breakpoint;
+  }
 }
 
 .footer {
@@ -55,6 +63,11 @@ h1, h2, h3, h4, p {
   > div {
     position: absolute;
     width: 100vw;
+
+    @media (min-width: $sm-breakpoint) {
+      overflow: visible;
+      max-width: $sm-breakpoint;
+    }
   }
 }
 
