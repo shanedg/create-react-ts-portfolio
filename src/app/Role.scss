@@ -1,11 +1,26 @@
+@import './App.constants';
+
 .role__heading {
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-top: 1px solid;
+  background-color: $app-primary-bg-color;
+  color: $app-primary-text-color;
+
+  padding: 0 2rem 0;
+
+  .role__employer {
+    padding: 1px;
+  }
 }
 
 .role-details__heading {
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-bottom: 1px solid;
+  background-color: $app-primary-bg-color;
+  color: $app-primary-text-color;
+  padding: 1px 3rem;
+}
+
+.role-details__list-item {
+  padding: 0 0 0.75rem;
+
+  &:last-child {
+    padding: 0;
+  }
 }

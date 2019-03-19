@@ -1,11 +1,18 @@
 @import 'App.constants.scss';
 
 .footer {
-  height: 10vh; // fallback for css var()
-  height: calc(var(--vh, 1vh) * 10);
-  min-height: 4rem;
+  height: 4rem;
   padding: $common-padding;
   transition: height 125ms ease-out;
-  background-color: $app-primary-bg-color;
-  color: $app-primary-text-color;
+  border-top: 1px solid $app-primary-bg-color;
+  text-align: right;
+
+  .footer__link {
+    background-color: $app-primary-bg-color;
+    color: $app-primary-text-color;
+    padding: 1px;
+  }
+
+  @media (min-width: $sm-breakpoint) {
+  }
 }

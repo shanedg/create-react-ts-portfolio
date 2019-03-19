@@ -23,7 +23,7 @@ class App extends Component {
   /**
    * substitute vh units to account for mobile address bar
    *
-   * reworked solution from css-tricks:
+   * adapted solution from css-tricks:
    * https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
    */
   actualViewportHeight() {
@@ -37,9 +37,14 @@ class App extends Component {
      */
     if (window) {
       /**
-       * recalculate viewport height on resize only
-       * vh units work fine with mobile address bar present (init).
-       * calculation fixes layout on address bar hide.
+       * recalculate viewport height on init and resize.
+       * vh units work fine with mobile address bar hidden.
+       * calculation fixes layout when address bar visible.
+       */
+      this.actualViewportHeight();
+
+      /**
+       * [todo] throttle/debounce resize listener
        */
       window.addEventListener('resize', () => {
         this.actualViewportHeight();

@@ -1,7 +1,16 @@
 @import 'App.constants.scss';
 
+h1, h2, h3, h4 {
+  line-height: 1;
+}
+
 h1, h2, h3, h4, p {
   margin: 0;
+}
+
+a, a:visited, a:hover {
+  color: #000;
+  font-weight: bold;
 }
 
 .app {
@@ -19,8 +28,9 @@ h1, h2, h3, h4, p {
 // animated route transitions
 .app__switch {
   position: relative;
-  height: 73vh; // fallback for css var()
-  height: calc(var(--vh, 1vh) * 73);
+  // [todo] organize this height calculation; at least extract into variables
+  height: calc(100vh - 105px - 4rem); // fallback for css var()
+  height: calc(var(--vh, 1vh) * 100 - 105px - 4rem);
   min-height: 150px;
 
   > div {
@@ -35,17 +45,35 @@ h1, h2, h3, h4, p {
 }
 
 .heading {
-  padding: $common-padding;
-  height: 4rem;
+  margin: 1rem 1rem 0;
+  background-color: $app-primary-bg-color;
+  color: $app-primary-text-color;
+
+  .heading__title {
+    padding: 1px 1rem;
+  }
 }
 
 .content {
-  height: calc(73vh - 4rem); // fallback for css var()
-  height: calc(var(--vh, 1vh) * 73 - 4rem);
-  min-height: calc(150px - 4rem);
+  // [todo] organize this height calculation; at least extract into variables
+  height: calc(100vh - 105px - 2.5rem - 4rem - 2px); // fallback for css var()
+  height: calc(var(--vh, 1vh) * 100 - 105px - 2.5rem - 4rem - 2px);
+  min-height: calc(150px - 2.5rem);
   overflow-y: scroll;
   padding: $common-padding;
   transition: height 125ms ease-out;
+  margin: 0 0 0 1rem;
+
+  .content__text {
+    padding: 0 0 0.5rem;
+  }
+
+  .content__link {
+    background-color: $app-primary-bg-color;
+    color: $app-primary-text-color;
+    border: 1px solid #000;
+    padding: 1px;
+  }
 }
 
 .role-employment-dates {
