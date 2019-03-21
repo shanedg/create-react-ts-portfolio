@@ -32,7 +32,7 @@ type RoleProps = {
 }
 
 type RouteStyles = {
-  left: string;
+  transform: string;
   opacity: number;
 }
 

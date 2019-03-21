@@ -59,7 +59,7 @@ class App extends Component {
    */
   mapStyles = (styles: RouteStylesNumeric): RouteStyles => {
     return {
-      left: `${styles.left}vw`,
+      transform: `translateX(${styles.left}vw)`,
       opacity: styles.opacity,
     }
   };
