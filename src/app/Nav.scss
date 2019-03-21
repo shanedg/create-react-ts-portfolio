@@ -1,9 +1,11 @@
+@import 'App.constants.scss';
+
 .nav {
   display: block;
+  margin: 0.25rem 0 0;
 
   .nav__u-list {
     display: flex;
-
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -11,14 +13,18 @@
     .nav__u-list-item {
       margin: 0 1rem 0 0;
 
-      a, a:visited, a:hover {
-        color: white;
+      a, a:visited {
+        color: #000;
         font-weight: bold;
-      }
-    }
+        text-decoration: none;
+        padding: 2px;
+        transition: background-color 250ms ease-out, color 250ms ease-out;
 
-    .nav__link_active {
-      text-decoration: none;
+        &.nav__link_active, &:hover {
+          background-color: $app-primary-bg-color;
+          color: $app-primary-text-color;
+        }
+      }
     }
   }
 }

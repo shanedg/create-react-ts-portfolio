@@ -29,7 +29,7 @@ const Work = (props: any) => {
   return (
     <article className="work">
       <div className="heading">
-        <h2 className="heading__title">work</h2>
+        <h2 className="heading__title">jobs</h2>
       </div>
       <section className="content">
         {builtRoles}

@@ -16,20 +16,21 @@ const roles: Role[] = [
     employer: 'zipari',
     title: 'front end developer',
   },
-  {
-    highlights: [
-      'migrated marketing site lead capture and tracking system from marketo to eloqua',
-      'resolved cms-driven content configurations breaking dynamic components',
-      'performed minor cosmetic updates',
-      'all work on per project basis',
-    ],
-    dates: {
-      until: '2019-03-31',
-      start: '2018-11-27',
-    },
-    employer: 'workmarket / adp (freelance)',
-    title: 'contract web engineer',
-  },
+  // [todo] freelance/projects page?
+  // {
+  //   highlights: [
+  //     'migrated marketing site lead capture and tracking system from marketo to eloqua',
+  //     'resolved cms-driven content configurations breaking dynamic components',
+  //     'performed minor cosmetic updates',
+  //     'all work on per project basis',
+  //   ],
+  //   dates: {
+  //     until: '2019-03-31',
+  //     start: '2018-11-27',
+  //   },
+  //   employer: 'workmarket / adp (freelance)',
+  //   title: 'contract web engineer',
+  // },
   {
     highlights: [
       'node, craftcms, wordpress',

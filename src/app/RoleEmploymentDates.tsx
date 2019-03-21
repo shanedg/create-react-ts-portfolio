@@ -61,7 +61,7 @@ const RoleEmploymentDates = (props: RoleDatesProps) => {
     : null ;
 
   return (
-    <span className="role-employment-dates">
+    <div className="role-employment-dates">
       {started &&
         // [todo] semantic date/time attributes on time elements
         <time>
@@ -76,7 +76,7 @@ const RoleEmploymentDates = (props: RoleDatesProps) => {
           {until}
         </time>
       }
-    </span>
+    </div>
   );
 };
 
