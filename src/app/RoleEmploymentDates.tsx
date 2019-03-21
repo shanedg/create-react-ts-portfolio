@@ -11,9 +11,16 @@ const RoleEmploymentDates = (props: RoleDatesProps) => {
   const displayShortMonthYear = (date: Date) => {
 
     /**
+     * options for locale string short month
+     */
+    const localeStringOptions = {
+      month: 'short',
+    };
+
+    /**
      * get short month from date
      */
-    const shortMonth = date.toLocaleString('en-us', { month: 'short' });
+    const shortMonth = date.toLocaleString('en-us', localeStringOptions);
 
     /**
      * get year from date
