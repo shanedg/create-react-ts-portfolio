@@ -6,6 +6,7 @@ import roles from './work.roles';
 import utils from './shared/utils';
 
 const SCROLL_DEBOUNCE_INTERVAL = 250;
+const SCROLL_EDGE_BUFFER = 1;
 
 class Work extends Component<any, {readMore: boolean}> {
   debouncedReadMoreOnScroll: EventListener;
@@ -36,8 +37,12 @@ class Work extends Component<any, {readMore: boolean}> {
       const fullScrollHeight = contentEl.scrollHeight;
       const pixelsScrolled = contentEl.scrollTop;
 
+      /**
+       * test if scrolled past "the fold"
+       * `SCROLL_EDGE_BUFFER` accounts for minor height discrepancy on mobile browsers
+       */
       this.setState({
-        readMore: (fullScrollHeight - pixelsScrolled) > containerHeight,
+        readMore: (fullScrollHeight - pixelsScrolled) > (containerHeight + SCROLL_EDGE_BUFFER),
       });
     }
   }
