@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import Role from './Role';
-import roles from './work.roles';
+import roles from './shared/static.roles';
 import utils from './shared/utils';
 
 const SCROLL_DEBOUNCE_INTERVAL = 250;
