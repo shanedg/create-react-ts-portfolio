@@ -9,8 +9,15 @@ const About = (props: any) => {
       </div>
       <section className="content">
         <p>
-          shane is an experienced web developer with a background in front
-          end dev and generalist work. he lives and works in nyc.
+          shane is professional web developer with a background in:
+        </p>
+        <ul>
+          <li>front end dev</li>
+          <li>generalist work</li>
+        </ul>
+        <p>
+          as well as experience in both enterprise and startup
+          environments. he is currently based in nyc.
         </p>
       </section>
     </article>
