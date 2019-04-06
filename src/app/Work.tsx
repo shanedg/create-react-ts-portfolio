@@ -52,7 +52,7 @@ class Work extends Component<any, {readMore: boolean}> {
 
   scrollLastRoleIntoView() {
     const contentContainerSelector = '.work .content';
-    const lastRoleSelector = 'role:last-of-type';
+    const lastRoleSelector = '.role:last-of-type';
 
     if (window) {
       const contentContainer = document.querySelector(contentContainerSelector);
