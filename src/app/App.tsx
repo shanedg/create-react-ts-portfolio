@@ -14,11 +14,20 @@ import Contact from './Contact';
 import Header from './Header';
 import Footer from './Footer';
 import Work from './Work';
+import utils from './shared/utils';
+
+const RESIZE_DEBOUNCE_INTERVAL = 25;
 
 /**
  * app main
  */
 class App extends Component {
+  debouncedActualViewportHeight: EventListener;
+
+  constructor(props: any) {
+    super(props);
+    this.debouncedActualViewportHeight = utils.simpleDebounce(this.actualViewportHeight, RESIZE_DEBOUNCE_INTERVAL);
+  }
 
   /**
    * substitute vh units to account for mobile address bar
@@ -32,9 +41,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    /**
-     * check for window context
-     */
     if (window) {
       /**
        * recalculate viewport height on init and resize.
@@ -42,13 +48,7 @@ class App extends Component {
        * calculation fixes layout when address bar visible.
        */
       this.actualViewportHeight();
-
-      /**
-       * [todo] throttle/debounce resize listener
-       */
-      window.addEventListener('resize', () => {
-        this.actualViewportHeight();
-      });
+      window.addEventListener('resize', this.debouncedActualViewportHeight);
     }
   }
 
