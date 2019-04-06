@@ -3,8 +3,12 @@ import React, { Component } from 'react';
 
 import Role from './Role';
 import roles from './work.roles';
+import utils from './shared/utils';
+
+const SCROLL_DEBOUNCE_INTERVAL = 250;
 
 class Work extends Component<any, {readMore: boolean}> {
+  debouncedReadMoreOnScroll: EventListener;
 
   constructor(props: any) {
     super(props);
@@ -13,6 +17,7 @@ class Work extends Component<any, {readMore: boolean}> {
     };
 
     this.checkReadMoreOnScroll = this.checkReadMoreOnScroll.bind(this);
+    this.debouncedReadMoreOnScroll = utils.simpleDebounce(this.checkReadMoreOnScroll, SCROLL_DEBOUNCE_INTERVAL);
   }
 
   componentDidMount() {
@@ -20,7 +25,7 @@ class Work extends Component<any, {readMore: boolean}> {
 
     const contentEl = document.querySelector('.work .content');
     if (contentEl) {
-      contentEl.addEventListener('scroll', this.checkReadMoreOnScroll);
+      contentEl.addEventListener('scroll', this.debouncedReadMoreOnScroll);
     }
   }
 
