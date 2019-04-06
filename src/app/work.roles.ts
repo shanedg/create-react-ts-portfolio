@@ -5,9 +5,10 @@
 const roles: Role[] = [
   {
     highlights: [
-      'new feature development on core product family of angular (6+) apps, including product configurability',
-      'legacy client product maintenance across family of angular (5+) apps',
-      'build internal tools for product configuration, internal testing, and quality assurance',
+      'new feature development on core product family of front end angular applications',
+      'multi-tenant product configurability',
+      'client product maintenance across legacy family front end angular applications',
+      'internal tools for product configuration and qa',
     ],
     dates: {
       until: 'present',
@@ -16,27 +17,14 @@ const roles: Role[] = [
     employer: 'zipari',
     title: 'front end developer',
   },
-  // [todo] freelance/projects page?
-  // {
-  //   highlights: [
-  //     'migrated marketing site lead capture and tracking system from marketo to eloqua',
-  //     'resolved cms-driven content configurations breaking dynamic components',
-  //     'performed minor cosmetic updates',
-  //     'all work on per project basis',
-  //   ],
-  //   dates: {
-  //     until: '2019-03-31',
-  //     start: '2018-11-27',
-  //   },
-  //   employer: 'workmarket / adp (freelance)',
-  //   title: 'contract web engineer',
-  // },
   {
     highlights: [
-      'node, craftcms, wordpress',
-      'react and vue js',
-      'experimentation & personalization',
-      'content migration, re-platforming, site launches',
+      'Jekyll, Node, React, Vue, and WordPress front and back end applications',
+      'a/b testing and personalization (Optimizely)',
+      'Braze platform-driven, behavior-triggered messaging, including web push',
+      'self-serve email and web push subscription management in marketing communications preference center',
+      're-launch and re-brand of Braze (formerly Appboy) in November \'17',
+      'seamless back end system migrations; simultaneous micro-site launches',
     ],
     dates: {
       until: '2018-10-26',
@@ -47,9 +35,11 @@ const roles: Role[] = [
   },
   {
     highlights: [
-      'conversion optimization, a/b testing',
-      'integrating tech in the enterprise',
-      'responsive vs adaptive front end development',
+      'AngularJS web application for ecommerce product selection',
+      'ensured high availability of deals data under peak holiday traffic',
+      'a/b testing and personalization (Adobe Target)',
+      're-platform project user acceptance testing; management and migration of legacy content between platforms',
+      'adaptive and responsive, cross-browser landing pages and other site content for promotional compaigns',
     ],
     dates: {
       until: '2017-07-06',
