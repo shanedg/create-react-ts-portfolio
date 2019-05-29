@@ -74,9 +74,9 @@ class Work extends Component<any, {readMore: boolean}> {
 
         const lastRole = contentContainer.querySelector(lastRoleSelector);
 
-        (lastRole && contentContainer)
-          ? lastRole.scrollIntoView(scrollBehaviorOptions)
-          : null;
+        if (lastRole && contentContainer) {
+          lastRole.scrollIntoView(scrollBehaviorOptions);
+        }
       }
     }
   };
