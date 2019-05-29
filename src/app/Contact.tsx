@@ -6,7 +6,7 @@ const Contact = (props: any) => {
   /**
    * dev.to profile
    */
-  const devTo = <p className="content__text"><a href="https://dev.to/shanedg" target="_blank" rel="noopner noreferrer" className="content__link">shanedg on dev.to</a></p>;
+  const devTo = <p className="content__text"><a href="https://dev.to/shanedg" target="_blank" rel="noopener noreferrer" className="content__link">shanedg on dev.to</a></p>;
 
   /**
    * github username
