@@ -4,6 +4,20 @@
  */
 const roles: Role[] = [
   {
+    employer: 'squarespace',
+    title: 'software engineer',
+    dates: {
+      start: '2019-07-16',
+      until: 'present',
+    },
+    highlights: [
+      'make the legacy things play nice',
+      'miles of Webpack config',
+      'front end build tooling',
+      'transpilation, compilation, perspiration, polyfills',
+    ],
+  },
+  {
     highlights: [
       'new feature development on core product family of front end angular applications',
       'multi-tenant product configurability',
@@ -11,7 +25,7 @@ const roles: Role[] = [
       'internal tools for product configuration and qa',
     ],
     dates: {
-      until: 'present',
+      until: '2019-06-14',
       start: '2018-11-05',
     },
     employer: 'zipari',

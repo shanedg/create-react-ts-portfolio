@@ -9,10 +9,10 @@ const About = (props: any) => {
       </div>
       <section className="content">
         <p>
-          shane is a professional web developer with a background in:
+          shane is a professional software engineer with a background in:
         </p>
         <ul>
-          <li>front end dev</li>
+          <li>front-end web development</li>
           <li>generalist work</li>
         </ul>
         <p>
